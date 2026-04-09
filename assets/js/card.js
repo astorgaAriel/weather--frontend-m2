@@ -1,5 +1,7 @@
 const paths = document.querySelectorAll("#mapa path");
 const preview = document.getElementById("preview");
+const region = document.getElementById("cardTitle");
+
 
 paths.forEach(path => {
   path.addEventListener("click", () => {
@@ -15,5 +17,7 @@ paths.forEach(path => {
     );
 
     preview.appendChild(path.cloneNode(true));
+    const nombreRegion = path.getAttribute("name");
+    region.textContent = nombreRegion;
   });
 });

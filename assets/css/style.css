@@ -3,26 +3,17 @@
     padding: 0;
     
 }
-header{
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-nav{
-    background-color: #6d8e81;
-    padding: 10px;
 
-}
+
 aside{
     
-    background: linear-gradient(to bottom right, #075adf, #000080);
+    background: linear-gradient(to bottom right, #075adf11, #00008018);
     min-height: 100vh;
     padding: 0;
 }
 main{
-    background-color: #5ec734;
-    padding: 20px;
+    background-color: #b5b9b367;
+
 }
 
 article{
@@ -46,6 +37,12 @@ footer{
     text-align: center;
 }
 body{
+    background-image: url(/appClima/assets/img/Los-Andes-MOP.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-origin: border-box;
     margin: 0;
     padding: 0;
 
@@ -71,4 +68,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+small img {
+    width: 30px;
+    height: 30px;
 }
