@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const paths = document.querySelectorAll("#mapa path");
   const preview = document.getElementById("preview");
-  const region = document.getElementById("cardTitle");
+const region = document.getElementById("cardTitle");
 
   function seleccionarRegion(path) {
     const bbox = path.getBBox();
