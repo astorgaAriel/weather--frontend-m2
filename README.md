@@ -24,10 +24,6 @@ Pequeña aplicación web que muestra un mapa SVG de regiones y una card previa c
 - La lógica principal está en `assets/js/card.js`: el código añade `click` a cada `path` y un `submit` para el formulario de búsqueda.
 - Para cambiar el comportamiento de búsqueda (ej. coincidencia exacta), edita la condición en `card.js`.
 
-```css
-#mapa path.selected { stroke: #ffcc00; stroke-width:1.5; fill:#9bd3a6; }
-```
-
 **Contribuciones**
 - Abrir un issue o enviar un pull request con mejoras.
 
