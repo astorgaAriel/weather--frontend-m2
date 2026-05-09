@@ -1,34 +1,63 @@
 # appClima
 
-Pequeña aplicación web que muestra un mapa SVG de regiones y una card previa con el SVG de la región seleccionada.
+Pequeña demostración front-end que muestra un mapa SVG interactivo de regiones y una vista tipo "card" con el clima de varias ciudades por región.
 
-**Características**
-- Mapa SVG interactivo con varias regiones (`<path name="...">`).
-- Click en una región: muestra la forma en la `card` y actualiza el título.
-- Buscador en la barra superior que permite localizar regiones por su `name` (insensible a mayúsculas y coincidencias parciales).
+Resumen rápido
+- Interacción por clic en el mapa o por menú desplegable: carga una tarjeta con datos de 9 ciudades de la región seleccionada.
+- Datos de prueba separados en `assets/js/data.js` (cada región tiene 9 registros).
+- Lógica principal en `assets/js/card.js`.
 
-**Estructura del proyecto**
-- `index.html` — página principal con el mapa y la interfaz.
-- `assets/css/style.css` — estilos.
-- `assets/js/card.js` — lógica para mostrar la card y buscar regiones.
-- `assets/img/` — imágenes (logo, etc.).
+Cómo ejecutar
 
-**Cómo usar (local)**
-1. Abrir `index.html` en un navegador moderno (no requiere servidor):
-   - En Windows, doble clic sobre `index.html` o ejecutar desde VS Code: "Open with Live Server" si lo prefieres.
-2. Para buscar una región, usa el campo de búsqueda en la barra superior y escribe el nombre (por ejemplo: `Antofagasta`).
-   - Si hay coincidencia, la región se selecciona y la card se actualiza con su SVG y nombre.
+Opción recomendada — servidor local (requerido para peticiones HTTP/Fetch)
 
-**Notas para desarrolladores**
-- Los nombres de región están en el atributo `name` de cada `<path>` dentro del SVG (`#mapa`).
-- La lógica principal está en `assets/js/card.js`: el código añade `click` a cada `path` y un `submit` para el formulario de búsqueda.
-- Para cambiar el comportamiento de búsqueda (ej. coincidencia exacta), edita la condición en `card.js`.
+Para desarrollo se recomienda ejecutar un servidor local porque algunas funcionalidades (por ejemplo peticiones `fetch`/AJAX o módulos ES importados) no funcionan correctamente al abrir archivos con el esquema `file://`.
 
-**Contribuciones**
-- Abrir un issue o enviar un pull request con mejoras.
+Ejemplos rápidos:
 
-**Licencia**
-- Proyecto personal / educativo. Añade una licencia si quieres compartirlo públicamente.
+- Live Server (VS Code): instalar la extensión "Live Server" y elegir "Open with Live Server" en el archivo `index.html`.
+- Python 3 (desde la raíz del proyecto):
 
-**Repositorio**
-- Código fuente y remoto: https://github.com/astorgaAriel/weather--frontend-m2
+```bash
+python -m http.server 5500
+# abrir http://localhost:5500
+```
+
+- Node (http-server vía npx):
+
+```bash
+npx http-server -c-1
+# abrir http://localhost:8080 (puerto por defecto)
+```
+
+Abrir directamente `index.html` (doble clic) puede funcionar para pruebas básicas de HTML/CSS/imagenes, pero NO es fiable para peticiones HTTP, módulos o características que requieran protocolo `http(s)`.
+
+Seleccionar una región
+- Haz clic en el mapa (SVG) o usa el menú "Regiones". La vista desplazará y mostrará la card con las 9 ciudades provistas en los datos.
+
+Buscar
+- Usa el campo de búsqueda en la barra superior para localizar regiones por nombre.
+
+Cambios importantes (últimas actualizaciones)
+- Los datos de prueba fueron movidos a `assets/js/data.js` para separar datos y lógica.
+- El archivo `card.js` ya no genera ciudades dinámicamente: muestra exactamente las 9 ciudades provistas en los datos.
+- Se renombró el icono `viento (1).png` a `viento.png` y se actualizó el código para que cargue correctamente las imágenes.
+- Mejora de rendimiento: event delegation para manejar clicks en el SVG y limpieza del contenedor antes de renderizar nueva card.
+
+Estructura relevante
+- [index.html](index.html) — Entrada de la app y carga de scripts.
+- assets/js/data.js — Datos de prueba (`regionesData`).
+- assets/js/card.js — Lógica de render y eventos.
+- assets/css/style.css — Estilos.
+- assets/img/ — Iconos y logo usados por la app.
+
+Notas para desarrolladores
+- Para añadir o editar ciudades: modificar `assets/js/data.js` (cada región debe contener 9 objetos ciudad).
+- Para cambiar estilos: editar `assets/css/style.css`.
+- Si añades nuevos iconos, colócalos en `assets/img/` y usa nombres sin paréntesis ni espacios para evitar problemas de URL.
+
+Contribuciones
+- Este es un proyecto personal/educativo. Puedes abrir PRs o sugerir mejoras.
+
+Licencia
+- Sin licencia explícita (proyecto personal). Añade una licencia si deseas compartirlo públicamente.

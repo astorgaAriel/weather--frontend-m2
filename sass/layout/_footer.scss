@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as *;
+footer {
+  background-color: $color-footer;
+  color: $white-hover;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 2px solid $color-blue;
+}
+
+footer a i {
+  color: $white-hover;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+footer a i:hover {
+  color: $border-yellow;
+  font-size: 35px;
+}
+
+footer p {
+  margin: 5px 0;
+}

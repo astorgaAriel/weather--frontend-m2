@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as *;
+aside {
+  background: linear-gradient(to bottom right, #075adf11, #00008018);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 10px $color-shadow;
+  min-height: 100vh;
+}

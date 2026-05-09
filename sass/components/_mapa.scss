@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+aside svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#mapa path {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  fill: $color-mapa;
+  stroke: $color-white;
+  stroke-width: 0.5;
+  pointer-events: auto;
+}
+
+#mapa path:hover {
+  fill: $border-yellow;
+  filter: drop-shadow(0 0 5px rgba(234, 193, 12, 0.5));
+}
+
+#mapa path.active {
+  fill: $border-yellow;
+  stroke-width: 1.5;
+}

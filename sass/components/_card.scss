@@ -1,0 +1,156 @@
+@use '../abstracts/variables' as *;
+.city-card {
+  background: $color-white;
+  border-left: 4px solid $border-yellow;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 8px $color-shadow;
+  transition: all 0.3s ease;
+}
+
+.city-card:hover {
+  box-shadow: 0 4px 12px $shadow-hover;
+  transform: translateX(5px);
+}
+
+.city-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.city-card__name {
+  font-weight: 700;
+  color: $color-blue;
+  font-size: 16px;
+}
+
+.city-card__condition {
+  font-size: 12px;
+  color: $color-card;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.city-card__condition-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.city-card__weather {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $color-white;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.weather-info:hover {
+  background-color: $white-hover;
+}
+
+.weather-info__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+  object-fit: contain;
+}
+
+.weather-info__label {
+  font-size: 10px;
+  color: $color-label;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.weather-info__value {
+  font-weight: 700;
+  color: $color-blue;
+  font-size: 13px;
+}
+.city-card__day {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+
+.city-card__week {
+  display: flex;
+  gap: 4px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+
+.city-card__week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 40px;
+  padding: 6px 2px;
+}
+
+.city-card__week-day-name {
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.city-card__week-day-temp {
+  font-size: 13px;
+  font-weight: 600;
+}
+.city-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.city-card__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 6px 4px;
+}
+
+.city-card__stat-label {
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.city-card__stat-value {
+  font-weight: 700;
+  color: #075adf;
+  font-size: 14px;
+}
